@@ -1,6 +1,72 @@
-let line0 = 0
-let line1 = 0
+input.onButtonPressed(Button.B, function () {
+    music.changeTempoBy(music.beat(BeatFraction.Whole))
+})
 let line2 = 0
+let line1 = 0
+let line0 = 0
+basic.showLeds(`
+    # . . . .
+    # . . . .
+    # . . . .
+    # . . . .
+    # . . . .
+    `)
+basic.showLeds(`
+    . # . . .
+    . # . . .
+    . # . . .
+    . # . . .
+    . # . . .
+    `)
+basic.showLeds(`
+    . . # . .
+    . . # . .
+    . . # . .
+    . . # . .
+    . . # . .
+    `)
+basic.showLeds(`
+    . . . # .
+    . . . # .
+    . . . # .
+    . . . # .
+    . . . # .
+    `)
+basic.showLeds(`
+    . . . . #
+    . . . . #
+    . . . . #
+    . . . . #
+    . . . . #
+    `)
+basic.showLeds(`
+    . . . . .
+    . . . . .
+    . . # . .
+    . . . . .
+    . . . . .
+    `)
+basic.showLeds(`
+    . . . . .
+    . # # # .
+    . # . # .
+    . # # # .
+    . . . . .
+    `)
+basic.showLeds(`
+    # # # # #
+    # . . . #
+    # . . . #
+    # . . . #
+    # # # # #
+    `)
+music.setVolume(100)
+if (input.buttonIsPressed(Button.A)) {
+    music.setVolume(music.volume() + 1)
+}
+if (input.buttonIsPressed(Button.AB)) {
+    basic.showString("" + (music.volume()))
+}
 basic.forever(function () {
     line0 = pins.digitalReadPin(DigitalPin.P2)
     line1 = pins.digitalReadPin(DigitalPin.P8)
